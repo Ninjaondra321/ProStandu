@@ -31,6 +31,9 @@ class urlGetter():
         a = table.find_element(By.TAG_NAME, "a")
         link = a.get_attribute("href")
 
+        print(self.driver)
+        print(len(self.driver.window_handles))
+
         # Save the url to a file
         with open("urls.txt", "a") as f:
             f.write(link + "\n")
@@ -58,6 +61,7 @@ if __name__ == "__main__":
 
     for song in l:
         s.getUrl(song)
+        input("Press enter to continue")
 
     input("Press enter to exit")
     s.close()
